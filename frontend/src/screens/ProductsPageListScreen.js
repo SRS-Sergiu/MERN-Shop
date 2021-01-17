@@ -12,7 +12,7 @@ import { listProducts } from '../actions/productActions'
 
 
 
-const HomeScreen = ({ match }) => {
+const ProductsPageListScreen = ({ match }) => {
 
     const keyword = match.params.keyword
 
@@ -29,10 +29,10 @@ const HomeScreen = ({ match }) => {
 
     return (
         <>
-            <Meta />
-            {/* {!keyword ? <ProductCarousel /> : <Link to='/' className='btn btn-light'>Go Back</Link>}
-            <h1>Latest Products</h1> */}
-            {/* {loading ? ( 
+            <Meta title='SRS - Products'/>
+            {!keyword ? <ProductCarousel /> : <Link to='/productslist' className='btn btn-light'>Go Back</Link>}
+            <h1>Latest Products</h1>
+            {loading ? ( 
                 <Loader /> 
             ) :  error ? ( 
                 <Message variant='danger'>{error}</Message>
@@ -47,9 +47,9 @@ const HomeScreen = ({ match }) => {
                 </Row>
                 <Paginate pages={pages} page={page} keyword={keyword ? keyword : ''} />
                </>
-            )} */}
+            )}
         </>
     )
 }
 
-export default HomeScreen
+export default ProductsPageListScreen

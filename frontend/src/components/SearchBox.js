@@ -9,7 +9,7 @@ const SearchBox = ({ history }) => {
         if (keyword.trim()) {
             history.push(`/search/${keyword}`)
         } else {
-            history.push('/')
+            history.push('/productslist')
         }
     }
 
@@ -23,7 +23,8 @@ const SearchBox = ({ history }) => {
                 className='mr-sm-2 ml-sm-5'
             >
             </Form.Control>
-            <Button 
+            <Button
+                id='searchForm' 
                 type='submit'
                 variant='outline-success' 
                 className='p-2'

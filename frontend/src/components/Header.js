@@ -18,7 +18,9 @@ const Header = () => {
        dispatch(logout())
     }
 
-
+    
+   
+     
     return <header>   
         <Navbar bg="dark" variant="dark" expand="lg" collapseOnSelect>
           <Container>
@@ -27,8 +29,24 @@ const Header = () => {
             </LinkContainer>
             <Navbar.Toggle aria-controls="basic-navbar-nav"/>
             <Navbar.Collapse id="basic-navbar-nav">
+              
+              <Nav className="m-auto">
+              <LinkContainer to="/" style={ navLinkStyle }>
+                        <Nav.Link>Home</Nav.Link>
+                  </LinkContainer>
+                  <LinkContainer to="/productslist" style={ navLinkStyle }>
+                        <Nav.Link>Products</Nav.Link>
+                  </LinkContainer>
+                  <LinkContainer to="/about-us" style={ navLinkStyle }>
+                        <Nav.Link>About Us</Nav.Link>
+                  </LinkContainer>
+                  <LinkContainer to="/contact" style={ navLinkStyle }>
+                        <Nav.Link>Contact</Nav.Link>
+                  </LinkContainer>
+              </Nav>
               <Route render={({ history }) => <SearchBox history={history} />} />
                 <Nav className="ml-auto">
+                
                   <LinkContainer to="/cart">
                       <Nav.Link>
                         <i className="fas fa-shopping-cart"></i>Cart</Nav.Link>
@@ -65,6 +83,12 @@ const Header = () => {
           </Container>
         </Navbar>
     </header>
+}
+
+const navLinkStyle = {
+  color: "white",
+  fontSize: '16px',
+  fontWeight: 500,
 }
 
 export default Header

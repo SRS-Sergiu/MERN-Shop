@@ -10,8 +10,22 @@ import { getProductById,
     } from '../controllers/productController.js'
 import { protect, admin } from '../middleware/authMidleware.js'
 
+// products displayed on homeplage
+// router.route('/')
+//         .get(getProducts)
+//         .post(protect, admin, createProduct)
+// router.route('/:id/reviews')
+//         .post(protect, createProductReview)
+// router.get('/top', getTopProducts)
+// router.route('/:id')
+//         .get(getProductById)
+//         .delete(protect, admin, deleteProduct)
+//         .put(protect, admin, updateProduct)
 
-router.route('/')
+
+
+// products displayed on products page list
+router.route('/productslist')
         .get(getProducts)
         .post(protect, admin, createProduct)
 router.route('/:id/reviews')
