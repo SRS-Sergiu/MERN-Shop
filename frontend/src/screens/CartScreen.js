@@ -23,6 +23,7 @@ const CartScreen = ({ match, location, history }) => {
         if(!userInfo){
             history.push('/')
         }
+        
         if(productId) {
             dispatch(addToCart(productId, qty))
         }
