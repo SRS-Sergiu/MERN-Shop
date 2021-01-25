@@ -6,9 +6,13 @@ import Product from '../components/Product'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
 import Paginate from '../components/Paginate'
+import HeroSection from '../components/HeroSection'
+import { SliderData } from '../components/elements/SliderData'
+import ImageSlider from '../components/elements/ImageSlider'
 import Meta from '../components/Meta'
-import ProductCarousel from '../components/ProductCarousel'
+import Cards from '../components/elements/Cards'
 import { listProducts } from '../actions/productActions'
+import SimpleSlider from '../components/Banner'
 
 
 
@@ -30,24 +34,13 @@ const HomeScreen = ({ match }) => {
     return (
         <>
             <Meta />
-            {/* {!keyword ? <ProductCarousel /> : <Link to='/' className='btn btn-light'>Go Back</Link>}
-            <h1>Latest Products</h1> */}
-            {/* {loading ? ( 
-                <Loader /> 
-            ) :  error ? ( 
-                <Message variant='danger'>{error}</Message>
-            ) : (
-              <>
-                <Row>
-                    {products.map((product) => (
-                        <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
-                            <Product product={product} />
-                        </Col>
-                    ))}
-                </Row>
-                <Paginate pages={pages} page={page} keyword={keyword ? keyword : ''} />
-               </>
-            )} */}
+            <SimpleSlider />
+            {loading ? <Loader /> : <ImageSlider slides={SliderData} />}
+            
+            <Cards />
+            {/* <HeroSection /> */}
+            {/* {!keyword ? <ProductCarousel /> : <Link to='/' className='btn btn-light'>Go Back</Link>} */}
+       
         </>
     )
 }

@@ -10,14 +10,10 @@ import Meta from '../components/Meta'
 import ProductCarousel from '../components/ProductCarousel'
 import { listProducts } from '../actions/productActions'
 
-
-
 const ProductsPageListScreen = ({ match }) => {
 
     const keyword = match.params.keyword
-
     const pageNumber = match.params.pageNumber || 1
-
     const dispatch = useDispatch()
     const productList = useSelector(state => state.productList)
     const { loading, error, products, page, pages } = productList
@@ -25,7 +21,6 @@ const ProductsPageListScreen = ({ match }) => {
     useEffect(() => {
         dispatch(listProducts(keyword, pageNumber))
     }, [dispatch, keyword, pageNumber])
-
 
     return (
         <>
