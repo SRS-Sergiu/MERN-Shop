@@ -1,0 +1,74 @@
+.bannerItem{
+    position: relative;
+  }
+  
+    .bannerCaption{
+        position: absolute;
+        top: 25%;
+        left: 5%;
+        right: 5%;
+        text-align: center;
+        color: #fff;
+        z-index: 1;
+    }
+    .bannerCaption h1{
+        text-align: center;
+        color: #fff;
+        font-size: 52px;
+    }
+    .bannerCaption h3{
+        color: #fff;
+        width: 100%;   text-align: center;
+        text-transform: lowercase;
+        margin-bottom: 45px
+    }
+    .bannerCaption a{    padding: 14px 24px;
+        background: #00C6CF;
+        color: #fff;
+        border-radius: 5px;
+    }
+.bannerImg{
+    height: 540px;
+    overflow: hidden;
+    position: relative;
+    background: rgba(1, 0, 0, .66);
+}
+.bannerImg img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+.slick-dots {
+    bottom: 20px;
+}
+.slick-dots li button{
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
+.slick-dots li {
+    width: 35px;
+    height: 4px;
+    margin: 0 7px;
+    border: 1px solid #00C6CF;
+}.slick-dots li button:before {
+    line-height: unset;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: '';
+}
+.slick-dots li.slick-active button:before {
+    opacity: .75;
+    color: black;
+}
+.slick-dots li.slick-active button:before {
+    opacity: 0.55;
+    background-color: #00C6CF;
+}

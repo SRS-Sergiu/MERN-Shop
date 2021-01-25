@@ -6,7 +6,10 @@ import Product from '../components/Product'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
 import Paginate from '../components/Paginate'
-import HeroSection from '../components/HeroSection'
+import {HomeAboutUsSection} from '../components/HomeAboutUsSection'
+import ProductCarousel from '../components/ProductCarousel'
+import { HomeTitle } from '../components/HomeTitle'
+import { HomeContactBanner } from '../components/HomeContactBanner'
 import { SliderData } from '../components/elements/SliderData'
 import ImageSlider from '../components/elements/ImageSlider'
 import Meta from '../components/Meta'
@@ -35,8 +38,11 @@ const HomeScreen = ({ match }) => {
         <>
             <Meta />
             <SimpleSlider />
-            {loading ? <Loader /> : <ImageSlider slides={SliderData} />}
-            
+            <HomeTitle />
+            <HomeAboutUsSection />
+            <HomeContactBanner />
+            {/* {loading ? <Loader /> : <ImageSlider slides={SliderData} />} */}
+            <ProductCarousel />
             <Cards />
             {/* <HeroSection /> */}
             {/* {!keyword ? <ProductCarousel /> : <Link to='/' className='btn btn-light'>Go Back</Link>} */}

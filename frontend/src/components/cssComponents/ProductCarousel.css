@@ -1,0 +1,12 @@
+
+.carousel-indicators li {
+    width: 35px;
+    height: 4px;
+    margin: 0 7px;
+    border: 1px solid #00C6CF;
+    background-color: unset;
+    box-sizing: border-box;
+}
+.carousel-indicators .active {
+    background-color: #00C6CF;
+}

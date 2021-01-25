@@ -4,6 +4,8 @@ import { SliderData } from './SliderData';
 import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from 'react-icons/fa';
 import { Container } from 'react-bootstrap';
 import './css/Slider.css' 
+
+
 const ImageSlider = ({ slides }) => {
   const [current, setCurrent] = useState(0);
   const length = slides.length;
@@ -43,7 +45,7 @@ const ImageSlider = ({ slides }) => {
               <div className='silderCaption'>
                   <h1>SRS <span>Auto</span></h1>
                   <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, w</p>
-                  <Link to='/productslist' className='sliderBtn' >See more</Link>
+                  <Link to='/productslist' className='sliderBtn'>See more</Link>
               </div>
           </Container>
     </section> 

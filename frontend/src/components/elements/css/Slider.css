@@ -34,14 +34,10 @@
     user-select: none;
   }
   
-  .slide {
-    opacity: 0;
-    transition-duration: 3s ease;
-  }
+
   
   .slide.active {
     opacity: 1;
     transition-duration: 2s;
     transform: scale(1.08);
   }
-  

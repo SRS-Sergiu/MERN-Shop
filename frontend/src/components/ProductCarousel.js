@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import Loader from './Loader'
 import Message from './Message'
 import { listTopProducts } from '../actions/productActions'
+import "./cssComponents/ProductCarousel.css";
 
 
 const ProductCarousel = () => {
@@ -17,23 +18,36 @@ const ProductCarousel = () => {
         dispatch(listTopProducts())
     }, [dispatch])
 
-
+    const settings = {
+        draggable: false,
+            slideToShow: 3,
+            autoplay: false,
+            dots: true,
+            lazyLoad: 'ondemand',
+            arrows: true,
+    }
     return loading ? <Loader /> : error ? <Message variant='danger'>{error}</Message>
         : (
-            <Carousel pause='hover' className='bg-dark'>
+       
+          <div>
+              <div class="homeTitle"><p>the best cars</p><h1>Masinile noastre</h1><div></div></div>
+                <Carousel pause='hover' className='homeCarousel' {...settings}>
                 {products.map(product => (
                     <Carousel.Item key={product._id}>
                         <Link to={`/product/${product._id}`}>
                                 <Image src={product.image} alt={product.name} fluid />
                                 <Carousel.Caption className='carousel-caption'>
                                     <h2>
-                                        {product.name} (${product.price})
+                                        {product.name} 
                                     </h2>
+                                    <p>{product.price} <span>$</span></p>
+                                    <div>{product.description}</div>
                                 </Carousel.Caption>
                         </Link>
                     </Carousel.Item>
                 ))}
             </Carousel>
+          </div>
         )
 }
 
