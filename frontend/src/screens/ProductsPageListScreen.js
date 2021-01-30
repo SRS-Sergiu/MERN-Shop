@@ -5,6 +5,7 @@ import { Row, Col } from 'react-bootstrap'
 import Product from '../components/Product'
 import Message from '../components/Message'
 import Loader from '../components/Loader'
+import SortBar from '../components/SortBar'
 import Paginate from '../components/Paginate'
 import Meta from '../components/Meta'
 import ProductCarousel from '../components/ProductCarousel'
@@ -25,8 +26,8 @@ const ProductsPageListScreen = ({ match }) => {
     return (
         <>
             <Meta title='SRS - Products'/>
-            {!keyword ? <ProductCarousel /> : <Link to='/productslist' className='btn btn-light'>Go Back</Link>}
-            <h1>Latest Products</h1>
+            {/* {!keyword ? <ProductCarousel /> : <Link to='/productslist' className='btn btn-light'>Go Back</Link>} */}
+            <SortBar />
             {loading ? ( 
                 <Loader /> 
             ) :  error ? ( 

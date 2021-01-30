@@ -1,17 +1,17 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
-import { Row, Col } from 'react-bootstrap'
-import Product from '../components/Product'
-import Message from '../components/Message'
-import Loader from '../components/Loader'
-import Paginate from '../components/Paginate'
+// import { Link } from 'react-router-dom'
+// import { Row, Col } from 'react-bootstrap'
+// import Product from '../components/Product'
+// import Message from '../components/Message'
+// import Loader from '../components/Loader'
+// import Paginate from '../components/Paginate'
 import {HomeAboutUsSection} from '../components/HomeAboutUsSection'
-import ProductCarousel from '../components/ProductCarousel'
+//import ProductCarousel from '../components/ProductCarousel'
 import { HomeTitle } from '../components/HomeTitle'
 import { HomeContactBanner } from '../components/HomeContactBanner'
-import { SliderData } from '../components/elements/SliderData'
-import ImageSlider from '../components/elements/ImageSlider'
+// import { SliderData } from '../components/elements/SliderData'
+// import ImageSlider from '../components/elements/ImageSlider'
 import Meta from '../components/Meta'
 import Cards from '../components/elements/Cards'
 import { listProducts } from '../actions/productActions'
@@ -42,7 +42,7 @@ const HomeScreen = ({ match }) => {
             <HomeAboutUsSection />
             <HomeContactBanner />
             {/* {loading ? <Loader /> : <ImageSlider slides={SliderData} />} */}
-            <ProductCarousel />
+            {/* <ProductCarousel /> */}
             <Cards />
             {/* <HeroSection /> */}
             {/* {!keyword ? <ProductCarousel /> : <Link to='/' className='btn btn-light'>Go Back</Link>} */}

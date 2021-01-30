@@ -1,6 +1,7 @@
 
 .HomeContactBannerSection{
     background-color: #242424;
+    margin-top: 25px;
 }
 
 .HomeContactBanner {
@@ -52,7 +53,7 @@
 }
 .hcbItem3 img{
     position: absolute;
-    top: -60px;
+    top: -15%;
     left: 0;
     width: 100%;
 }

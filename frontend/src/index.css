@@ -13,6 +13,13 @@ h1{
     font-size: 1.8rem;
     padding: 1rem 0;
 }
+a{
+    color: #fff
+}
+a:hover{
+    text-decoration: none;
+    color: #00C6CF;
+  }
 h2{
     font-size: 1.2rem;
     padding: .5rem 0;
@@ -41,4 +48,8 @@ h2{
     padding: 30px;
     margin: 30px;
     border-radius: 70px;
+ }
+ .slick-slider {
+     overflow: hidden;
+     width: 100%;
  }

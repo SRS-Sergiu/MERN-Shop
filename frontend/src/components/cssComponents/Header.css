@@ -13,10 +13,9 @@
 
 .navbar-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  height: 80px;
-  max-width: 1500px;
+  height: 80px;    width: 100%;
 }
 
 .navbar-logo {
@@ -37,19 +36,24 @@
 
 .nav-menu {
   display: grid;
-  grid-template-columns: repeat(4, auto);
+  grid-template-columns: repeat(5, auto);
   grid-gap: 10px;
   list-style: none;
   text-align: center;
-  justify-content: end;
-  margin-right: 2rem;
+  justify-content: center;
   margin-bottom: 0;
+  align-items: center;
   margin-top: 0;
+  padding: 0 5px;
 }
 
-.nav-item {
+.nav-menu .nav-item {
   height: 80px;
   margin-right: unset;
+}
+.nav-item a{
+  height: 100%;
+  display: flex;
 }
 
 .nav-links {
@@ -158,4 +162,38 @@
     color: #242424;
     transition: 250ms;
   }
+}
+
+#username::before{
+  font-family: "Font Awesome 5 Free";
+   content: "\f007";
+   display: inline-block;
+   padding-right: 3px;
+   vertical-align: middle;
+   font-weight: 900;font-size: 22px;
+}
+#username::after{
+  display: none;
+}
+.div-item .fas {
+  padding: 0.5rem 1rem;
+  margin-right: 10px;
+  font-size: 22px;
+}
+.div-item .fa {
+  margin-right: 10px;
+  padding: 0.5rem 1rem;
+  font-size: 22px;
+  color: #fff;
+  cursor: pointer;
+}
+.div-item .fa:hover {
+  color: #00C6CF 
+}
+.div-item .admin-dropdown {
+  background: #f5f5f5;
+}
+.admin-dropdown .nav-link {
+  padding: 0.5rem 1.25rem;
+  color: #000;
 }

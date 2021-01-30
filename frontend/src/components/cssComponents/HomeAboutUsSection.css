@@ -68,3 +68,9 @@
     padding: 0;
     font-size: 14px;
 }
+
+.hAbUsContent .fas {
+    font-size: 24px;
+    position: relative;
+    top: -1px;
+}

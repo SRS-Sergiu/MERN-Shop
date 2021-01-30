@@ -34,7 +34,9 @@ const Header = () => {
         setButton(true);
       }
     };
-  
+    
+   
+
     useEffect(() => {
       showButton();
     }, []);
@@ -42,19 +44,22 @@ const Header = () => {
     window.addEventListener('resize', showButton);
     return (
       <>
+        
         <nav className='navbar'>
+        <div className='container-fluid'>
           <div className='navbar-container'>
             <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
               SRS
               <i className='fab fa-typo3' />
             </Link>
-            <Route render={({ history }) => <SearchBox history={history} />} />
             <div className='menu-icon' onClick={handleClick}>
               <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
             </div>
             <ul className={click ? 'nav-menu active' : 'nav-menu'}>
               <li className='nav-item'>
-                <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+                <Link to='/' 
+                className='nav-links' 
+                onClick={closeMobileMenu}>
                   Home
                 </Link>
               </li>
@@ -76,47 +81,59 @@ const Header = () => {
                   Products
                 </Link>
               </li>
-  
-              <li>
+              <li className='nav-item'>
+                <Link 
+                className='nav-links'
+                to='/contact'>
+                 Contact
+                </Link>
+              </li>
+              <li className='nav-item nav-links-mobile'>
                 <Link
                   to='/login'
-                  className='nav-links-mobile'
                   onClick={closeMobileMenu}
                 >
                   Sign Up
                 </Link>
               </li>
             </ul>
-            <LinkContainer to="/cart">
-                      <Link>
-                        <i className="fas fa-shopping-cart"></i>Cart</Link>
-                  </LinkContainer>
-
-            {userInfo ? (
-                <NavDropdown title={userInfo.name} id='username'>
-                    <LinkContainer to='/profile'>
-                      <NavDropdown.Item>Profile</NavDropdown.Item>
+            <div className='div-container d-flex justify-content-center align-items-center'>
+                <div className='div-item'><Route render={({ history }) => <SearchBox history={history} />} /></div>
+                <div className='div-item'>
+                      <LinkContainer to="/cart">
+                              <Link>
+                                <i className="fas fa-shopping-cart"></i></Link>
                     </LinkContainer>
-                    <NavDropdown.Item onClick={logoutHandler}>Logout</NavDropdown.Item>
-                </NavDropdown>
-              ) : (
-                button && <Button buttonStyle='btn--outline'>SIGN UP</Button>
-              )}
-               {userInfo && userInfo.isAdmin && (
-                <NavDropdown title='Admin' id='adminmenu'>
-                      <LinkContainer to='/admin/userlist'>
-                        <NavDropdown.Item>Users</NavDropdown.Item>
+                  </div>
+                <div className='div-item'>
+                {userInfo ? (
+                  <NavDropdown  id='username' >
+                      <LinkContainer to='/profile'>
+                        <NavDropdown.Item>Profile</NavDropdown.Item>
                       </LinkContainer>
-                      <LinkContainer to='/admin/productlist'>
-                        <NavDropdown.Item>Products</NavDropdown.Item>
-                      </LinkContainer>
-                      <LinkContainer to='/admin/orderlist'>
-                        <NavDropdown.Item>Orders</NavDropdown.Item>
-                      </LinkContainer>
+                      <NavDropdown.Item onClick={logoutHandler}>Logout</NavDropdown.Item>
+                      {userInfo && userInfo.isAdmin && (
+                        <NavDropdown title='Admin' id='adminmenu' className='admin-dropdown'>
+                              <LinkContainer to='/admin/userlist'>
+                                <NavDropdown.Item>Users</NavDropdown.Item>
+                              </LinkContainer>
+                              <LinkContainer to='/admin/productlist'>
+                                <NavDropdown.Item>Products</NavDropdown.Item>
+                              </LinkContainer>
+                              <LinkContainer to='/admin/orderlist'>
+                                <NavDropdown.Item>Orders</NavDropdown.Item>
+                              </LinkContainer>
+                          </NavDropdown>
+                    )}
                   </NavDropdown>
+                ) : (
+                  button && <Button buttonStyle='btn--outline'>SIGN UP</Button>
+                
                 )}
-
+              </div>
+            </div>
           </div>
+        </div>
         </nav>
       </>
     );
