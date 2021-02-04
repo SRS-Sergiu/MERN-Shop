@@ -6,7 +6,7 @@ const ServicesScreen = () => {
       <>
         <section className="leftServicesBox d-flex align-items-center">
                 <div className="imgServices">
-                        <img src='/images/autopaint.jpg'/>
+                        <img alt='asd' src='/images/autopaint.jpg'/>
                 </div>
                 <div>
                     <h2>Vopsitorie</h2>
