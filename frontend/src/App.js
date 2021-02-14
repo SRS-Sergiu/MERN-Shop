@@ -21,52 +21,66 @@ import ProductEditScreen from './screens/ProductEditScreen'
 import OrderListScreen from './screens/OrderListScreen'
 import ServicesScreen from './screens/ServicesScreen'
 import ContactScreen from './screens/ContactScreen'
+import DashboardScreen from './screens/DashboardScreen'
+import { useSelector } from 'react-redux'
 
 
 const App = () => {
+
+  const userLogin = useSelector(state => state.userLogin)
+  const { userInfo } = userLogin
+
   return (
-    <Router>
-      <Header />
-      <main>
-        <Container>
-          <Route path='/order/:id' component={OrderScreen} />
-          <Route path='/shipping' component={ShippingScreen} />
-          <Route path='/payment' component={PaymentScreen} />
-          <Route path='/placeorder' component={PlaceOrderScreen} />
-          <Route path='/login' component={LoginScreen} />
-          <Route path='/register' component={RegisterScreen} />
-          <Route path='/profile' component={ProfileScreen} />
-          <Route path='/productslist' component={ProductsPageListScreen} />
-          <Route path='/product/:id' component={ProductScreen} />
-          <Route path='/cart/:id?' component={CartScreen} />
-          <Route path='/admin/userlist' component={UserListScreen} />
-          <Route path='/admin/user/:id/edit' component={UserEditScreen} />
-          <Route path='/services' component={ServicesScreen} />
-          <Route path='/contact' component={ContactScreen} />
-          <Route
-            path='/admin/productlist'
-            component={ProductListScreen}
-            exact
-          />
-          <Route
-            path='/admin/productlist/:pageNumber'
-            component={ProductListScreen}
-            exact
-          />
-          <Route path='/admin/product/:id/edit' component={ProductEditScreen} />
-          <Route path='/admin/orderlist' component={OrderListScreen} />
-          <Route path='/search/:keyword' component={ProductsPageListScreen} exact />
-          <Route path='/productslist/page/:pageNumber' component={ProductsPageListScreen} exact />
-         
-          
-        </Container>
-         <Route
-            path='/search/:keyword/page/:pageNumber'
-            component={HomeScreen}
-            exact
-          />
-        <Route path='/' component={HomeScreen} exact />
-      </main>
+    <Router> <Header />
+      {/* {!userInfo && userInfo  ? (
+        <Header />
+      ) : userInfo.isAdmin (
+        <>
+       
+       </>
+      )}  */}
+         <main>
+            <Container>
+            <Route path='/admin/userlist' component={UserListScreen} />
+            <Route path='/admin/user/:id/edit' component={UserEditScreen} />
+            <Route path='/admin/productlist' component={ProductListScreen} exact />
+            <Route path='/admin/productlist/:pageNumber' component={ProductListScreen} exact />
+            <Route path='/admin/product/:id/edit' component={ProductEditScreen} />
+            <Route path='/admin/orderlist' component={OrderListScreen} />
+            <Route path='/admin' component={DashboardScreen} exact/>
+
+
+              <Route path='/order/:id' component={OrderScreen} />
+              <Route path='/shipping' component={ShippingScreen} />
+              <Route path='/payment' component={PaymentScreen} />
+              <Route path='/placeorder' component={PlaceOrderScreen} />
+              <Route path='/login' component={LoginScreen} />
+              <Route path='/register' component={RegisterScreen} />
+              <Route path='/profile' component={ProfileScreen} />
+              <Route path='/productslist' component={ProductsPageListScreen} />
+              <Route path='/product/:id' component={ProductScreen} />
+              <Route path='/cart/:id?' component={CartScreen} />
+              <Route path='/services' component={ServicesScreen} />
+              <Route path='/contact' component={ContactScreen} />
+              
+              <Route path='/search/:keyword' component={ProductsPageListScreen} exact />
+              <Route path='/productslist/page/:pageNumber' component={ProductsPageListScreen} exact />
+            
+              
+            </Container>
+            <Route
+                path='/search/:keyword/page/:pageNumber'
+                component={HomeScreen}
+                exact
+              />
+            <Route path='/' component={HomeScreen} exact />
+        
+          </main>
+          {/* {!userInfo.isAdmin  ? (
+             <Footer />
+           ) : (
+                <></>
+            )}  */}
       <Footer />
     </Router>
   )
