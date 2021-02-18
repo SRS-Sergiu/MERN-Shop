@@ -113,7 +113,6 @@ const Header = () => {
                       </LinkContainer>
                       <NavDropdown.Item onClick={logoutHandler}>Logout</NavDropdown.Item>
                       {userInfo && userInfo.isAdmin && (
-                        // <Link className='btnToDashboard' to='/admin'>Dashboard</Link>
                         <NavDropdown title='Admin' id='adminmenu' className='admin-dropdown'>
                               <LinkContainer to='/admin/userlist'>
                                 <NavDropdown.Item>Users</NavDropdown.Item>
