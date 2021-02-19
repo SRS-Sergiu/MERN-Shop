@@ -13,9 +13,11 @@ h1{
     font-size: 1.8rem;
     padding: 1rem 0;
 }
-a{
-    color: #fff
+#username::before,
+.div-item .fas{
+    color: #fff;
 }
+
 a:hover{
     text-decoration: none;
     color: #00C6CF;
